@@ -47,4 +47,10 @@ public class HomeController {
         model.put("page", "index");
         return "term";
     }
+
+    @GetMapping("/privacy")
+    public String privacy(Map<String, Object> model) {
+        model.put("page", "index");
+        return "privacy";
+    }
 }
