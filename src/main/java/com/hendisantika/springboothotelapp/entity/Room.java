@@ -18,7 +18,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class Room {
-    private int id;
+    private long id;
     private String referenceId;
     private String roomIndex;
     private int roomCount;
