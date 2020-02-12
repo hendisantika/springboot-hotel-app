@@ -45,4 +45,15 @@ public class Hotel {
     private String policies;
     private String description;
 
+    private int taId;
+    private String email;
+    private String fax;
+    private String telephone;
+    private String source;
+    private String status;
+    private String remark;
+
+    private String updateTime;
+    private String[] pictures;
+
 }
