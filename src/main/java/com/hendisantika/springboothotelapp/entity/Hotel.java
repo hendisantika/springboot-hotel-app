@@ -23,4 +23,9 @@ public class Hotel {
     private String hotelCnName;
     private String bookingUrl;
 
+    private int starRating;
+    private double latitude;
+    private double longitude;
+    private String pictureId;
+
 }
