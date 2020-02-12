@@ -39,4 +39,10 @@ public class Hotel {
     private String postCode;
     private String address;
 
+    private int rooms;
+    private String facilities;
+    private String roomFacilities;
+    private String policies;
+    private String description;
+
 }
