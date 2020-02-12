@@ -2,6 +2,7 @@ package com.hendisantika.springboothotelapp.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 
 import javax.servlet.http.HttpSession;
 import java.util.Map;
@@ -39,5 +40,11 @@ public class HomeController {
     public String contact(Map<String, Object> model) {
         model.put("page", "contact");
         return "contactus";
+    }
+
+    @RequestMapping("/term")
+    public String term(Map<String, Object> model) {
+        model.put("page", "index");
+        return "term";
     }
 }
