@@ -1,5 +1,6 @@
 package com.hendisantika.springboothotelapp.controller;
 
+import com.hendisantika.springboothotelapp.entity.Destination;
 import com.hendisantika.springboothotelapp.entity.Nationality;
 import com.hendisantika.springboothotelapp.service.WebserviceManager;
 import net.sf.json.JSONArray;
@@ -31,6 +32,18 @@ public class ApiController extends BaseController {
         context.setAttribute(kNationality, nationalities);
 
         JSONArray jsonArray = JSONArray.fromObject(nationalities);
+
+        return jsonArray.toString();
+    }
+
+    @RequestMapping("/suggestion/destination")
+    public String suggestDestination(@RequestParam("key") String key) {
+
+        // call rest api for fetching dstination suggestions
+        Destination[] destinations = apiManager.getDestination(key);
+        context.setAttribute(kDestination, destinations);
+
+        JSONArray jsonArray = JSONArray.fromObject(destinations);
 
         return jsonArray.toString();
     }
