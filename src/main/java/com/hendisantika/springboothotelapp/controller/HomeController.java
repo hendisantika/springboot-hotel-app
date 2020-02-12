@@ -1,6 +1,10 @@
 package com.hendisantika.springboothotelapp.controller;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
+
+import javax.servlet.http.HttpSession;
+import java.util.Map;
 
 /**
  * Created by IntelliJ IDEA.
@@ -13,4 +17,10 @@ import org.springframework.stereotype.Controller;
  */
 @Controller
 public class HomeController {
+    @GetMapping("/")
+    public String index(HttpSession session, Map<String, Object> model) {
+        model.put("page", "index");
+
+        return "index";
+    }
 }
