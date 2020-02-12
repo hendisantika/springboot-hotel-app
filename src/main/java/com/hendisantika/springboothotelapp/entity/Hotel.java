@@ -33,5 +33,10 @@ public class Hotel {
     private String scoreDetail;
     private String brand;
 
+    private String location;
+    private String cityId;
+    private String countryId;
+    private String postCode;
+    private String address;
 
 }
