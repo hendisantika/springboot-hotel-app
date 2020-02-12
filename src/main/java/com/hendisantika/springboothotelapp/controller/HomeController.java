@@ -34,4 +34,10 @@ public class HomeController {
         model.put("page", "about");
         return "aboutus";
     }
+
+    @GetMapping("/contact")
+    public String contact(Map<String, Object> model) {
+        model.put("page", "contact");
+        return "contactus";
+    }
 }
