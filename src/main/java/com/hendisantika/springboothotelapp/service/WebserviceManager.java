@@ -1,6 +1,7 @@
 package com.hendisantika.springboothotelapp.service;
 
 import com.hendisantika.springboothotelapp.entity.ExchangeRate;
+import com.hendisantika.springboothotelapp.entity.Nationality;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Component;
@@ -48,6 +49,18 @@ public class WebserviceManager {
     public ExchangeRate[] getExchangeRate() {
         ResponseEntity<ExchangeRate[]> resp = restTemplate.getForEntity(svcProperty.getRootUrl() + "/customer" +
                 "/exchange-rate", ExchangeRate[].class);
+        return resp.getBody();
+    }
+
+    /**
+     * fetch nationality suggestions
+     *
+     * @param key keyword
+     * @return array
+     */
+    public Nationality[] getNationality(String key) {
+        ResponseEntity<Nationality[]> resp = restTemplate.getForEntity(svcProperty.getRootUrl() + "/suggestion" +
+                "/nationality?key=" + key, Nationality[].class);
         return resp.getBody();
     }
 }
