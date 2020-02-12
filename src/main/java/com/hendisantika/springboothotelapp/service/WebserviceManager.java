@@ -1,5 +1,6 @@
 package com.hendisantika.springboothotelapp.service;
 
+import com.hendisantika.springboothotelapp.entity.Destination;
 import com.hendisantika.springboothotelapp.entity.ExchangeRate;
 import com.hendisantika.springboothotelapp.entity.Nationality;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -61,6 +62,18 @@ public class WebserviceManager {
     public Nationality[] getNationality(String key) {
         ResponseEntity<Nationality[]> resp = restTemplate.getForEntity(svcProperty.getRootUrl() + "/suggestion" +
                 "/nationality?key=" + key, Nationality[].class);
+        return resp.getBody();
+    }
+
+    /**
+     * fetch destination suggestions
+     *
+     * @param key keyword
+     * @return array
+     */
+    public Destination[] getDestination(String key) {
+        ResponseEntity<Destination[]> resp = restTemplate.getForEntity(svcProperty.getRootUrl() + "/suggestion" +
+                "/destination?key=" + key, Destination[].class);
         return resp.getBody();
     }
 }
