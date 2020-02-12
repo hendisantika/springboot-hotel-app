@@ -24,4 +24,14 @@ public class Policies {
     private String amendable;
     private String changeName;
     private String policies;
+
+    public String getDescription() {
+        String strResult = "Non-refundable";
+
+        if ("true".equalsIgnoreCase(refundable)) {
+            strResult = "Refundable";
+        }
+
+        return strResult;
+    }
 }
