@@ -28,4 +28,10 @@ public class HomeController {
         model.put("page", "index");
         return "home";
     }
+
+    @GetMapping("/about")
+    public String about(Map<String, Object> model) {
+        model.put("page", "about");
+        return "aboutus";
+    }
 }
