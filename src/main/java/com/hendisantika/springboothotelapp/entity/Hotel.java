@@ -28,4 +28,10 @@ public class Hotel {
     private double longitude;
     private String pictureId;
 
+    private int score;
+    private int reviews;
+    private String scoreDetail;
+    private String brand;
+
+
 }
