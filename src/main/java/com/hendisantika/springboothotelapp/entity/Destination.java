@@ -24,4 +24,13 @@ public class Destination extends Country {
     private int hotelStarRating;
     private int hotelCount;
     private String type;
+
+    /**
+     * Returns true if this destination is hotel
+     *
+     * @return boolean true - hotel, false - city
+     */
+    public boolean isHotel() {
+        return type.equals("hotel");
+    }
 }
