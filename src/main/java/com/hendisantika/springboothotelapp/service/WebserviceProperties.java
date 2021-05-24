@@ -1,6 +1,8 @@
 package com.hendisantika.springboothotelapp.service;
 
+import lombok.Data;
 import org.springframework.boot.context.properties.ConfigurationProperties;
+import org.springframework.context.annotation.Configuration;
 
 /**
  * Created by IntelliJ IDEA.
@@ -11,16 +13,10 @@ import org.springframework.boot.context.properties.ConfigurationProperties;
  * Date: 13/02/20
  * Time: 06.06
  */
+@Configuration
 @ConfigurationProperties(prefix = "webservice")
+@Data
 public class WebserviceProperties {
     // root url of web service
-    private String rooturl;
-
-    public String getRootUrl() {
-        return rooturl;
-    }
-
-    public void setRooturl(String rooturl) {
-        this.rooturl = rooturl;
-    }
+    private String rootUrl;
 }

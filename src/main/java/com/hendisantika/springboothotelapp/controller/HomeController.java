@@ -1,10 +1,10 @@
 package com.hendisantika.springboothotelapp.controller;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import javax.servlet.http.HttpSession;
 import java.util.Map;
 
 /**
@@ -18,17 +18,18 @@ import java.util.Map;
  */
 @Controller
 public class HomeController {
-    @GetMapping("/")
-    public String index(HttpSession session, Map<String, Object> model) {
-        model.put("page", "index");
+    @GetMapping({"/", "/home"})
+//    public String index(HttpSession session, Map<String, Object> model) {
+    public String index(Model model) {
+        model.addAttribute("page", "index");
         return "index";
     }
 
-    @GetMapping("/home")
-    public String home(HttpSession session, Map<String, Object> model) {
-        model.put("page", "index");
-        return "home";
-    }
+//    @GetMapping("/home")
+//    public String home(HttpSession session, Map<String, Object> model) {
+//        model.put("page", "index");
+//        return "home";
+//    }
 
     @GetMapping("/about")
     public String about(Map<String, Object> model) {
