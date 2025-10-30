@@ -2,6 +2,8 @@
 
 Hotel booking service built with Spring Boot, MyBatis, and MySQL.
 
+![Home Page](img/home.png "Home Page")
+
 ## Features
 
 - Hotel search and availability checking
