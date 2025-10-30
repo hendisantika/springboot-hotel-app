@@ -1,6 +1,6 @@
 #set ($title = "Aboutus")
 
-#parse("layout/layout.vm")
+#parse("velocity/layout/layout.vm")
 
 #@headLayout()
 <!-- css style -->
@@ -61,7 +61,7 @@
                 <div class="widget widget_signin">
                     <div class="signin-heading">SIGNIN NOW!!!</div>
 
-                    #parse("signinPopup.vm")
+                    #parse("velocity/signinPopup.vm")
 
                 </div>
             </div>

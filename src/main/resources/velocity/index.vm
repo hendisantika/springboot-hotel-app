@@ -1,6 +1,6 @@
 #set ($title = "Homepage")
 
-#parse("layout/layout.vm")
+#parse("velocity/layout/layout.vm")
 
 #@headLayout()
 <!-- css style -->
@@ -25,7 +25,7 @@
         <div class="form-signin">
             <div class="form-signin-heading">SIGNIN NOW!!!</div>
 
-            #parse("signinPopup.vm")
+            #parse("velocity/signinPopup.vm")
 
         </div>
     </div>

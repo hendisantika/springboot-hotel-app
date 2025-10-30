@@ -1,6 +1,6 @@
 #set ($title = "Homepage")
 
-#parse("layout/layout_login.vm")
+#parse("velocity/layout/layout_login.vm")
 
 #@headLayout()
 <!-- css style -->
@@ -26,25 +26,25 @@
                         <div class="col-md-8">
                             <!-- destination form -->
                             #set ($formlabel = "Where do you want to go?")
-                            #parse("home/findform/destination.vm")
+                            #parse("velocity/findform/destination.vm")
                         </div>
                         <div class="col-md-4">
                             <!-- nationality form -->
-                            #parse("home/findform/nationality.vm")
+                            #parse("velocity/findform/nationality.vm")
                         </div>
                     </div>
                     <div class="row gutter7">
                         <div class="col-md-2">
                             <!-- checkin form -->
-                            #parse("home/findform/checkin.vm")
+                            #parse("velocity/findform/checkin.vm")
                         </div>
                         <div class="col-md-2">
                             <!-- checkout form -->
-                            #parse("home/findform/checkout.vm")
+                            #parse("velocity/findform/checkout.vm")
                         </div>
                         <div class="col-md-5">
                             <!-- room form -->
-                            #parse("home/findform/room.vm")
+                            #parse("velocity/findform/room.vm")
                         </div>
                         <div class="col-md-3">
                             <button type="submit" class="btn btn-block btn-purple arrow-right">FIND HOTELS</button>

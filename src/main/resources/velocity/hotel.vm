@@ -1,6 +1,6 @@
 #set ($title = "Hotel")
 
-#parse("layout/layout_login.vm")
+#parse("velocity/layout/layout_login.vm")
 
 #@styleLayout()
 <!-- css style -->

@@ -1,6 +1,6 @@
 #set ($title = "Signup")
 
-#parse("layout/layout.vm")
+#parse("velocity/layout/layout.vm")
 
 #@headLayout()
 <!-- css style -->

@@ -5,7 +5,7 @@
 
 <head>
 
-    #parse("layout/head.vm")
+    #parse("velocity/layout/head.vm")
 
     <link href="css/bootstrap.css" rel="stylesheet" type="text/css">
     <link href="css/style.css" rel="stylesheet" type="text/css">
@@ -84,7 +84,7 @@
         </div>
     </div>
 
-    #parse("layout/navbar.vm")
+    #parse("velocity/layout/navbar.vm")
 
 </div>
 
@@ -95,12 +95,12 @@
 
 </div>
 
-    #parse("layout/footer.vm")
+    #parse("velocity/layout/footer.vm")
 
 #end
 
 #macro(scriptLayout)
-    #parse("layout/script.vm")
+    #parse("velocity/layout/script.vm")
 
     $!bodyContent
 
