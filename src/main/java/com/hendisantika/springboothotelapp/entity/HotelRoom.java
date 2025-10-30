@@ -1,6 +1,5 @@
 package com.hendisantika.springboothotelapp.entity;
 
-import com.sun.corba.se.impl.oa.poa.Policies;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;

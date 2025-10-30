@@ -5,6 +5,7 @@ import com.hendisantika.springboothotelapp.entity.ExchangeRate;
 import com.hendisantika.springboothotelapp.entity.HotelAvailability;
 import com.hendisantika.springboothotelapp.entity.Nationality;
 import com.hendisantika.springboothotelapp.service.WebserviceManager;
+import jakarta.servlet.http.HttpServletRequest;
 import net.sf.json.JSONArray;
 import net.sf.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,7 +15,6 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import javax.servlet.http.HttpServletRequest;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;

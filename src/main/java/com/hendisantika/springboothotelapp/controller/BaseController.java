@@ -1,8 +1,7 @@
 package com.hendisantika.springboothotelapp.controller;
 
+import jakarta.servlet.ServletContext;
 import org.springframework.web.context.ServletContextAware;
-
-import javax.servlet.ServletContext;
 
 /**
  * Created by IntelliJ IDEA.
