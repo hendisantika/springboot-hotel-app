@@ -1,5 +1,10 @@
 # springboot-hotel-app
 
+[![Java CI with Maven](https://github.com/hendisantika/springboot-hotel-app/actions/workflows/maven.yml/badge.svg)](https://github.com/hendisantika/springboot-hotel-app/actions/workflows/maven.yml)
+![Java](https://img.shields.io/badge/Java-25-orange?logo=openjdk)
+![Spring Boot](https://img.shields.io/badge/Spring%20Boot-4.1.2-brightgreen?logo=springboot)
+![Dependabot](https://img.shields.io/badge/Dependabot-enabled-blue?logo=dependabot)
+
 Hotel booking service built with Spring Boot, MyBatis, and MySQL.
 
 ![Home Page](img/home.png "Home Page")
@@ -15,19 +20,21 @@ Hotel booking service built with Spring Boot, MyBatis, and MySQL.
 
 ## Technologies
 
-- Spring Boot 3.5.7
-- Java 21
-- MySQL 8.0
-- MyBatis 3.0.5
+- Java 25 (LTS)
+- Spring Boot 4.1.2
+- Jackson 3 (`tools.jackson`)
+- MyBatis Spring Boot Starter 4.1.0
+- MySQL 9.5 (via Docker Compose)
 - Lombok
-- Docker & Docker Compose
+- Docker & Docker Compose (Eclipse Temurin 25 base images)
+- GitHub Actions & Dependabot
 
 ## Prerequisites
 
-- Java 21 or higher
+- JDK 25 or higher
 - Maven 3.9+
 - Docker and Docker Compose (for containerized deployment)
-- MySQL 8.0 (if running locally without Docker)
+- MySQL 8.0+ (if running locally without Docker)
 
 ## Running with Docker (Recommended)
 
@@ -52,7 +59,7 @@ The application will be available at: http://localhost:8080
 
 The Docker setup includes:
 
-- MySQL 8.0 database (port 3306)
+- MySQL 9.5 database (port 3306)
 - Spring Boot application (port 8080)
 - Persistent volume for MySQL data
 - Health checks for service dependencies
@@ -142,6 +149,29 @@ springboot-hotel-app/
 └── pom.xml                         # Maven dependencies
 ```
 
+## Continuous Integration
+
+The [`Java CI with Maven`](.github/workflows/maven.yml) workflow runs on every push and pull request to `master`
+(and can be triggered manually via `workflow_dispatch`):
+
+- Sets up **Temurin JDK 25** with Maven dependency caching
+- Builds and tests the project with `mvn -B package`
+- On pushes to `master`, submits the Maven dependency graph to GitHub to improve Dependabot alerts
+
+## Dependency Management (Dependabot)
+
+[`dependabot.yml`](.github/dependabot.yml) keeps dependencies up to date (Asia/Jakarta timezone, 05:00):
+
+| Ecosystem        | Schedule        | Grouping                                                        | Commit prefix    |
+|------------------|-----------------|-----------------------------------------------------------------|------------------|
+| `maven`          | daily           | `spring-boot`, `mybatis`, `maven-plugins`, `minor-and-patch`    | `chore(deps)`    |
+| `github-actions` | weekly (Monday) | all actions in one PR                                           | `ci(deps)`       |
+| `docker`         | weekly (Monday) | Dockerfile base images (stays on the JDK 25 line)               | `build(deps)`    |
+| `docker-compose` | weekly (Monday) | images in `docker-compose.yml` (MySQL)                          | `build(deps)`    |
+
+All Dependabot PRs are labeled `dependencies` plus an ecosystem label (`java`, `github_actions`, `docker`).
+Legacy libraries (`json-lib`, `velocity`, `velocity-tools`) are intentionally ignored.
+
 ## API Endpoints
 
 (Add your API documentation here based on your controllers)
@@ -183,6 +213,15 @@ docker-compose restart
 ```
 
 ### Build Issues
+
+Make sure you are building with JDK 25:
+
+```bash
+java -version   # should print 25
+```
+
+If you see `package com.fasterxml.jackson.databind does not exist`, note that Spring Boot 4 uses
+Jackson 3 — import from `tools.jackson.databind` instead.
 
 If Lombok annotations are not working:
 
