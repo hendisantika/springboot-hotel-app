@@ -166,7 +166,7 @@ The [`Java CI with Maven`](.github/workflows/maven.yml) workflow runs on every p
 |------------------|-----------------|-----------------------------------------------------------------|------------------|
 | `maven`          | daily           | `spring-boot`, `mybatis`, `maven-plugins`, `minor-and-patch`    | `chore(deps)`    |
 | `github-actions` | weekly (Monday) | all actions in one PR                                           | `ci(deps)`       |
-| `docker`         | weekly (Monday) | Dockerfile base images (stays on the JDK 25 line)               | `build(deps)`    |
+| `docker`         | weekly (Monday) | Dockerfile base images (stays on the JDK 25 LTS line)           | `build(deps)`    |
 | `docker-compose` | weekly (Monday) | images in `docker-compose.yml` (MySQL)                          | `build(deps)`    |
 
 All Dependabot PRs are labeled `dependencies` plus an ecosystem label (`java`, `github_actions`, `docker`).

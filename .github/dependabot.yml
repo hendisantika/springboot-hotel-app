@@ -77,8 +77,9 @@ updates:
       # Stay on the JDK 25 LTS line; skip non-LTS major Java images
       - dependency-name: "eclipse-temurin"
         update-types: [ "version-update:semver-major" ]
+      # Tag "3.9-eclipse-temurin-25-alpine" encodes the JDK in its suffix, so Dependabot
+      # would bump it to non-LTS JDKs (26, 27, ...). Bump it manually together with java.version.
       - dependency-name: "maven"
-        update-types: [ "version-update:semver-major" ]
 
   # Images in docker-compose.yml (MySQL)
   - package-ecosystem: "docker-compose"
