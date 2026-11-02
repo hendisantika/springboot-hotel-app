@@ -1,6 +1,5 @@
 package com.hendisantika.springboothotelapp.service;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
 import com.hendisantika.springboothotelapp.entity.Destination;
 import com.hendisantika.springboothotelapp.entity.ExchangeRate;
 import com.hendisantika.springboothotelapp.entity.HotelAvailability;
@@ -15,8 +14,10 @@ import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Component;
 import org.springframework.web.client.RestTemplate;
+import tools.jackson.core.JacksonException;
+import tools.jackson.databind.ObjectMapper;
+import tools.jackson.databind.json.JsonMapper;
 
-import java.io.IOException;
 import java.util.Map;
 
 /**
@@ -115,11 +116,11 @@ public class WebserviceManager {
         // transfer json to object
         //
         HotelAvailability[] hotelAvailabilities = null;
-        ObjectMapper mapper = new ObjectMapper();
+        ObjectMapper mapper = JsonMapper.builder().build();
 
         try {
             hotelAvailabilities = mapper.readValue(jsonArray.toString(), HotelAvailability[].class);
-        } catch (IOException e) {
+        } catch (JacksonException e) {
             e.printStackTrace();
         }
 
